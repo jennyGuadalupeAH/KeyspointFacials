@@ -8,18 +8,12 @@ app = Flask(__name__)
 # Permitir todas las solicitudes CORS
 CORS(app)
 
-@app.route('/')
-def index():
-   # Usar render_template en lugar de send_static_file
-   return render_template('index.html')
-
 @app.route('/get_key_facials', methods=['POST'])
 def detectar_Puntos_Faciales():
 
    # Cargar la imagen
    IMAGE_PATH = './src/static/images/'  # Esto se cambiará para guardar la imagen recibida del front
 
-   # Validar la existencia de la imagen
    archivo = request.files['archivo']
    if archivo.filename == '':
       return jsonify({'error': 'No se cargó ninguna imagen'})     
@@ -33,6 +27,3 @@ def detectar_Puntos_Faciales():
       
       # Responder con la ruta de la imagen procesada
       return jsonify(resultado)
-
-if __name__ == '__main__':
-   app.run(debug=True)
