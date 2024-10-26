@@ -12,7 +12,7 @@ CORS(app)
 def detectar_Puntos_Faciales():
 
    # Cargar la imagen
-   IMAGE_PATH = './src/static/images/'  # Esto se cambiará para guardar la imagen recibida del front
+   IMAGE_PATH = 'static/images/'  # Esto se cambiará para guardar la imagen recibida del front
 
    archivo = request.files['archivo']
    if archivo.filename == '':
