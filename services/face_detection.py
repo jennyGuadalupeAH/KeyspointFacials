@@ -59,7 +59,7 @@ def procesar_imagen(image_path):
                         cv2.line(image_gray_bgr, (x - size, y + size), (x + size, y - size), color, thickness)
                         
     # ID del folder existente en Google Drive
-    folder_id = '169o8cJdktKRy2PyikWv5BRyALy2DDwds'  
+    folder_id = '1vTZvUw8xGS-g6qWn694YA38Vj2ZEFDn0'  
 
     # Convertir la imagen final en un buffer en memoria
     success, encoded_image = cv2.imencode('.jpg', image_gray_bgr)
